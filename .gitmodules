@@ -1,0 +1,9 @@
+[submodule "_nvm"]
+	path = _nvm
+	url = git@github.com:creationix/nvm.git
+[submodule "_git"]
+	path = _git
+	url = git@github.com:git/git.git
+[submodule "_vim/bundle/vundle"]
+	path = _vim/bundle/vundle
+	url = git@github.com:gmarik/Vundle.vim.git

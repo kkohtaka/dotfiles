@@ -1,0 +1,20 @@
+# Development Directory
+
+export DEVELOPMENT=$HOME/Development
+
+# Git Completion
+
+source $HOME/.git/contrib/completion/git-completion.bash
+
+# Node.js / NVM
+
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+
+export PATH=$PATH:./node_modules/.bin
+
+# Android
+
+export ANDROID_SDK=$DEVELOPMENT/android/sdk
+export ANDROID_NDK=$DEVELOPMENT/android/ndk
+export PATH=$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK
+
