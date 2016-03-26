@@ -1,6 +1,8 @@
 [submodule "_git"]
 	path = _git
-	url = git@github.com:git/git.git
+	url = https://github.com/git/git.git
+	branch = v2.8.0-rc4
 [submodule "_vim/bundle/vundle"]
 	path = _vim/bundle/vundle
-	url = git@github.com:gmarik/Vundle.vim.git
+	url = https://github.com/VundleVim/Vundle.vim.git
+	branch = v0.10.2
