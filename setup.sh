@@ -80,7 +80,6 @@ done
 APPLICATIONS="
     atom
     alfred
-    google-chrome
     google-japanese-ime
     google-drive
     spectacle
