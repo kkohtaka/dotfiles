@@ -1,6 +1,5 @@
-# Development Directory
-
-export DEVELOPMENT=$HOME/Development
+#!/bin/bash
+# Copyright (C) 2016 Kazumasa Kohtaka <kkohtaka@gmail.com> All right reserved
 
 # Git Completion
 
@@ -11,10 +10,4 @@ source $HOME/.git/contrib/completion/git-completion.bash
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
 export PATH=$PATH:./node_modules/.bin
-
-# Android
-
-export ANDROID_SDK=$DEVELOPMENT/android/sdk
-export ANDROID_NDK=$DEVELOPMENT/android/ndk
-export PATH=$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK
 

@@ -1,7 +1,14 @@
 #!/bin/bash
+# Copyright (C) 2016 Kazumasa Kohtaka <kkohtaka@gmail.com> All right reserved
 
 DIR=$HOME/dotfiles
 BACKUP_DIR="$DIR.bak"
+
+# Define generic functions
+
+check_existence_of() {
+    type "$1" > /dev/null 2>&1
+}
 
 pushd $DIR
 
@@ -20,10 +27,28 @@ mkdir -p "$BACKUP_DIR"
 # Create symbolic links to dotfiles
 
 for FILE in $FILES; do
-  BASE_NAME=$(echo "$FILE" | sed -E "s/_//")
-  cp "$HOME/.$BASE_NAME" "$BACKUP_DIR/"
-  ln -sf "$DIR/$FILE" "$HOME/.$BASE_NAME"
+    BASE_NAME=$(echo "$FILE" | sed -E "s/_//")
+    DST=$HOME/.$BASE_NAME
+    if [ -e "$DST" ]; then
+        if [ -L "$DST" ]; then
+            echo "Removing an old symlink..."
+            rm "$DST"
+        else
+            echo "Backing up .$BASE_NAME..."
+            mv "$DST" "$BACKUP_DIR/"
+        fi
+    fi
+    ln -sf "$DIR/$FILE" "$HOME/.$BASE_NAME"
 done
 
 popd
+
+# Install Homebrew
+
+if check_existence_of 'brew'; then
+    echo "Homebrew is already installed"
+else
+    echo "Installing Homebrew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 

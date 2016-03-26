@@ -1,3 +1,9 @@
+" Copyright (C) 2016 Kazumasa Kohtaka <kkohtaka@gmail.com> All right reserved
+
+"""""""""""
+" Generic "
+"""""""""""
+
 syntax on
 set number
 
@@ -18,6 +24,9 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+"set tabstop=4
+"set shiftwidth=4
+"set softtabstop=4
 
 set list
 set listchars=tab:>.,trail:_
@@ -30,7 +39,9 @@ set scrolloff=12
 
 colorscheme desert
 
-" Vundle
+""""""""""
+" Vundle "
+""""""""""
 
 set nocompatible
 filetype off
@@ -40,26 +51,48 @@ call vundle#rc()
 
 Bundle 'grarik/vundle'
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'Shougo/neocomplcache'
-Bundle 'godlygeek/tabular'
-Bundle 'jceb/vim-hier'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
+Bundle 'godlygeek/tabular'
 Bundle 'guileen/vim-node'
+Bundle 'tpope/vim-markdown'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/ideone-vim'
+Bundle 'scrooloose/nerdtree'
 Bundle 'dart-lang/dart-vim-plugin'
+Bundle 'Shougo/neocomplcache'
+Bundle 'jceb/vim-hier'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'wavded/vim-stylus'
 Bundle 'othree/html5-syntax.vim'
+Bundle 'funorpain/vim-cpplint'
+Bundle 'aklt/plantuml-syntax'
+Bundle 'haskell.vim'
 Bundle 'SingleCompile'
+Bundle 'teneighty/vim-ant'
+Bundle 'vim-scripts/java_checkstyle.vim'
+Bundle 'Dinduks/vim-java-get-set'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
-filetype plugin indent on
+filetype plugin indent on   " required!
 
-" NERDTree
+let g:ideone_open_buffer_after_post = 1
+
+""""""""""""
+" NERDTree "
+""""""""""""
 
 autocmd vimenter * NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" vim -b : edit binary using xxd-format!
+let g:NERDTreeDirArrows=0
+let g:NERDTreeWinSize=40
+
+""""""""""""""""""""""""""""""""""""""""""
+" vim -b : edit binary using xxd-format! "
+""""""""""""""""""""""""""""""""""""""""""
 
 augroup Binary
   au!
@@ -71,4 +104,16 @@ augroup Binary
   au BufWritePost *.img if &bin | %!xxd -g 1
   au BufWritePost *.img set nomod | endif
 augroup END
+
+"""""""""""
+" CPPLint "
+"""""""""""
+
+autocmd FileType cpp map <buffer> <F3> :call Cpplint()<CR>
+
+""""""""""""
+" PlantUML "
+""""""""""""
+
+let g:plantuml_executable_script="~/dotfiles/plantuml"
 
