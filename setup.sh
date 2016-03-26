@@ -18,7 +18,7 @@ git submodule update --init
 
 # List dotfiles
 
-FILES=$(find . -depth 1 -name '_*' | xargs basename)
+FILES=$(find . -depth 1 -name "_*" | xargs basename)
 
 # Create a directory to backup
 
@@ -45,10 +45,52 @@ popd
 
 # Install Homebrew
 
-if check_existence_of 'brew'; then
+if check_existence_of "brew"; then
     echo "Homebrew is already installed"
 else
     echo "Installing Homebrew..."
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+if ! check_existence_of "brew"; then
+    echo "Failed to install Homebrew"
+    exit -1
+fi
+
+# Update Homebrew
+
+echo "Updating Homebrew..."
+brew update && brew upgrade
+
+# Install packages via Homebrew
+
+BREW_PACKAGES="
+    brew-cask
+    go
+    nvm
+    rbenv
+    plantuml
+"
+for BREW_PACKAGE in $BREW_PACKAGES; do
+    brew install "$BREW_PACKAGE"
+done
+
+# Install applications via Homebrew Cask
+
+APPLICATIONS="
+    atom
+    alfred
+    google-chrome
+    google-japanese-ime
+    google-drive
+    spectacle
+    dropbox
+    dockertoolbox
+    virtualbox
+    vagrant
+    java
+"
+for APPLICATION in $APPLICATIONS; do
+    brew cask install "$APPLICATION"
+done
 
