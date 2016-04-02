@@ -80,16 +80,40 @@ done
 APPLICATIONS="
     atom
     alfred
-    google-japanese-ime
-    google-drive
-    spectacle
-    dropbox
+    clion
+    dash
     dockertoolbox
-    virtualbox
-    vagrant
+    dropbox
+    google-drive
+    google-japanese-ime
     java
+    spectacle
+    vagrant
+    virtualbox
 "
 for APPLICATION in $APPLICATIONS; do
     brew cask install "$APPLICATION"
+done
+
+# Install Go packages
+
+GO_PACKAGES="
+    golang.org/x/tools/cmd/goimports
+    github.com/nsf/gocode
+    code.google.com/p/rog-go/exp/cmd/godef
+"
+for GO_PACKAGE in $GO_PACKAGES; do
+    go get "$GO_PACKAGE"
+done
+
+# Install packages for Atom
+
+ATOM_PACKAGES="
+    dash
+    go-plus
+    godef
+"
+for ATOM_PACKAGES in $ATOM_PACKAGES; do
+    apm install "$ATOM_PACKAGES"
 done
 

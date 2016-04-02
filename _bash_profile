@@ -12,3 +12,8 @@ export NVM_DIR=~/.nvm
 
 export PATH=$PATH:./node_modules/.bin
 
+# Go
+
+export GOPATH=~/.go
+export PATH=$PATH:$GOPATH/bin
+
