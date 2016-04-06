@@ -84,9 +84,11 @@ APPLICATIONS="
     dash
     dockertoolbox
     dropbox
+    google-cloud-sdk
     google-drive
     google-japanese-ime
     java
+    omnigraffle
     spectacle
     vagrant
     virtualbox
@@ -96,6 +98,8 @@ for APPLICATION in $APPLICATIONS; do
 done
 
 # Install Go packages
+
+. $HOME/.bash_profile
 
 GO_PACKAGES="
     golang.org/x/tools/cmd/goimports
@@ -109,9 +113,13 @@ done
 # Install packages for Atom
 
 ATOM_PACKAGES="
+    atom-terminal
     dash
     go-plus
     godef
+    linter-docker
+    language-docker
+    dockerletion
 "
 for ATOM_PACKAGES in $ATOM_PACKAGES; do
     apm install "$ATOM_PACKAGES"
