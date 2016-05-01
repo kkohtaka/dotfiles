@@ -64,35 +64,14 @@ brew update && brew upgrade
 
 # Install packages via Homebrew
 
-BREW_PACKAGES="
-    brew-cask
-    go
-    nvm
-    rbenv
-    plantuml
-"
+BREW_PACKAGES="$(cat brew_packages.txt)"
 for BREW_PACKAGE in $BREW_PACKAGES; do
     brew install "$BREW_PACKAGE"
 done
 
 # Install applications via Homebrew Cask
 
-APPLICATIONS="
-    atom
-    alfred
-    clion
-    dash
-    dockertoolbox
-    dropbox
-    google-cloud-sdk
-    google-drive
-    google-japanese-ime
-    java
-    omnigraffle
-    spectacle
-    vagrant
-    virtualbox
-"
+APPLICATIONS="$(cat applications.txt)"
 for APPLICATION in $APPLICATIONS; do
     brew cask install "$APPLICATION"
 done
@@ -101,26 +80,14 @@ done
 
 . $HOME/.bash_profile
 
-GO_PACKAGES="
-    golang.org/x/tools/cmd/goimports
-    github.com/nsf/gocode
-    code.google.com/p/rog-go/exp/cmd/godef
-"
+GO_PACKAGES="$(cat go_packages.txt)"
 for GO_PACKAGE in $GO_PACKAGES; do
     go get "$GO_PACKAGE"
 done
 
 # Install packages for Atom
 
-ATOM_PACKAGES="
-    atom-terminal
-    dash
-    go-plus
-    godef
-    linter-docker
-    language-docker
-    dockerletion
-"
+ATOM_PACKAGES="$(cat atom_packages.txt)"
 for ATOM_PACKAGES in $ATOM_PACKAGES; do
     apm install "$ATOM_PACKAGES"
 done

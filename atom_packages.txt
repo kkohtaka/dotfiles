@@ -1,0 +1,7 @@
+atom-terminal
+dash
+go-plus
+godef
+linter-docker
+language-docker
+dockerletion
