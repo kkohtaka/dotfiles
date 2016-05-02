@@ -3,9 +3,7 @@ alfred
 clion
 dash
 dockertoolbox
-dropbox
 google-cloud-sdk
-google-drive
 google-japanese-ime
 java
 omnigraffle
