@@ -1,2 +1,4 @@
+/_atom/
+!/_atom/keymap.cson
 /_vim/bundle/
 !/_vim/bundle/vundle
