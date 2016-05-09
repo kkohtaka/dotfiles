@@ -7,6 +7,7 @@ google-cloud-sdk
 google-japanese-ime
 java
 omnigraffle
+slack
 spectacle
 vagrant
 virtualbox

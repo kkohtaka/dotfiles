@@ -49,7 +49,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'grarik/vundle'
+"Bundle 'grarik/vundle'
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'pangloss/vim-javascript'
