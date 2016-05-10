@@ -4,6 +4,8 @@ betterzipql
 clion
 dash
 dockertoolbox
+font-noto-sans
+font-noto-sans-japanese
 google-cloud-sdk
 google-japanese-ime
 java

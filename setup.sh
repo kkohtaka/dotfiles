@@ -92,3 +92,13 @@ for ATOM_PACKAGES in $ATOM_PACKAGES; do
     apm install "$ATOM_PACKAGES"
 done
 
+# Install packages for Node.js
+# NOTE: These packages requires NVM
+NODE_VERSION="v4.4.4"
+nvm install "$NODE_VERSION"
+nvm use --delete-prefix "$NODE_VERSION"
+NPM_PACKAGES="$(cat npm_packages.txt)"
+for NPM_PACKAGE in $NPM_PACKAGES; do
+    npm install -g "$NPM_PACKAGE"
+done
+
