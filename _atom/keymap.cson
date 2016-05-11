@@ -1,3 +1,5 @@
 'atom-text-editor':
   'ctrl-h': 'core:backspace'
+  'ctrl-i': 'editor:indent'
   'ctrl-j': 'editor:newline'
+  'ctrl-y': 'core:paste'
