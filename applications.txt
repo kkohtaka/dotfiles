@@ -5,7 +5,6 @@ clion
 dash
 dockertoolbox
 font-noto-sans
-font-noto-sans-japanese
 google-cloud-sdk
 google-japanese-ime
 java
@@ -17,5 +16,6 @@ quicklook-json
 quicklook-csv
 slack
 spectacle
+terraform
 vagrant
 virtualbox

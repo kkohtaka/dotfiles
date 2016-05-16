@@ -71,6 +71,7 @@ done
 
 # Install applications via Homebrew Cask
 
+brew tap caskroom/fonts
 APPLICATIONS="$(cat applications.txt)"
 for APPLICATION in $APPLICATIONS; do
     brew cask install "$APPLICATION"
@@ -94,7 +95,7 @@ done
 
 # Install packages for Node.js
 # NOTE: These packages requires NVM
-NODE_VERSION="v4.4.4"
+NODE_VERSION="v6.1.0"
 nvm install "$NODE_VERSION"
 nvm use --delete-prefix "$NODE_VERSION"
 NPM_PACKAGES="$(cat npm_packages.txt)"
