@@ -1,4 +1,6 @@
 "*":
+  core:
+    followSymlinks: false
   editor:
     showInvisibles: true
   "exception-reporting":
