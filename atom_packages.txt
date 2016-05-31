@@ -9,6 +9,7 @@ godef
 js-refactor
 linter
 linter-docker
+linter-eslint
 linter-jade
 linter-jshint
 linter-jscs

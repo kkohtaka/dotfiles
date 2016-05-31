@@ -4,4 +4,5 @@ jq
 kubernetes-cli
 nvm
 plantuml
+postgresql
 rbenv
