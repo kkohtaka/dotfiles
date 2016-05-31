@@ -62,6 +62,13 @@ fi
 echo "Updating Homebrew..."
 brew update && brew upgrade
 
+# Install Homebrew's formulae
+
+FORMULAE="$(cat brew_formulae.txt)"
+for FORMULA in $FORMULAE; do
+    brew tap "$FORMULA"
+done
+
 # Install packages via Homebrew
 
 BREW_PACKAGES="$(cat brew_packages.txt)"
@@ -71,7 +78,6 @@ done
 
 # Install applications via Homebrew Cask
 
-brew tap caskroom/fonts
 APPLICATIONS="$(cat applications.txt)"
 for APPLICATION in $APPLICATIONS; do
     brew cask install "$APPLICATION"

@@ -1,4 +1,5 @@
 brew-cask
+drone
 go
 jq
 kubernetes-cli
