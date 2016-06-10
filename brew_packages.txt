@@ -7,3 +7,4 @@ nvm
 plantuml
 postgresql
 rbenv
+wget
