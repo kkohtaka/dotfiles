@@ -13,8 +13,9 @@ linter-eslint
 linter-jade
 linter-jshint
 linter-jscs
+language-docker
+language-git
 language-jade
 language-javascript
-language-docker
 language-terraform
 refactor
