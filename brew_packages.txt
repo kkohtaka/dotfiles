@@ -1,9 +1,0 @@
-brew-cask
-drone
-go
-jq
-kubernetes-cli
-nvm
-plantuml
-postgresql
-rbenv

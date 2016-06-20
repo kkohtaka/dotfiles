@@ -18,7 +18,7 @@ git submodule update --init
 
 # List dotfiles
 
-FILES=$(find . -depth 1 -name "_*" | xargs basename)
+FILES=$(find . -maxdepth 1 -name "_*" | xargs -I {} basename {})
 
 # Create a directory to backup
 
@@ -43,49 +43,16 @@ done
 
 popd
 
-# Install Homebrew
+. $HOME/.bash_profile
 
-if check_existence_of "brew"; then
-    echo "Homebrew is already installed"
-else
-    echo "Installing Homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+# Install APT packages
 
-if ! check_existence_of "brew"; then
-    echo "Failed to install Homebrew"
-    exit -1
-fi
-
-# Update Homebrew
-
-echo "Updating Homebrew..."
-brew update && brew upgrade
-
-# Install Homebrew's formulae
-
-FORMULAE="$(cat brew_formulae.txt)"
-for FORMULA in $FORMULAE; do
-    brew tap "$FORMULA"
-done
-
-# Install packages via Homebrew
-
-BREW_PACKAGES="$(cat brew_packages.txt)"
-for BREW_PACKAGE in $BREW_PACKAGES; do
-    brew install "$BREW_PACKAGE"
-done
-
-# Install applications via Homebrew Cask
-
-APPLICATIONS="$(cat applications.txt)"
-for APPLICATION in $APPLICATIONS; do
-    brew cask install "$APPLICATION"
+APT_PACKAGES="$(cat apt_packages.txt)"
+for APT_PACKAGE in $APT_PACKAGES; do
+    sudo apt-get install "$APT_PACKAGE" -y
 done
 
 # Install Go packages
-
-. $HOME/.bash_profile
 
 GO_PACKAGES="$(cat go_packages.txt)"
 for GO_PACKAGE in $GO_PACKAGES; do
@@ -98,14 +65,3 @@ ATOM_PACKAGES="$(cat atom_packages.txt)"
 for ATOM_PACKAGES in $ATOM_PACKAGES; do
     apm install "$ATOM_PACKAGES"
 done
-
-# Install packages for Node.js
-# NOTE: These packages requires NVM
-NODE_VERSION="v6.1.0"
-nvm install "$NODE_VERSION"
-nvm use --delete-prefix "$NODE_VERSION"
-NPM_PACKAGES="$(cat npm_packages.txt)"
-for NPM_PACKAGE in $NPM_PACKAGES; do
-    npm install -g "$NPM_PACKAGE"
-done
-

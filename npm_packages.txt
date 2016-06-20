@@ -1,4 +1,0 @@
-browserify
-express-generator
-gitbook-cli
-gulp-cli

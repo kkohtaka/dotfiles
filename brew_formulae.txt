@@ -1,3 +1,0 @@
-drone/drone
-caskroom/fonts
-
