@@ -14,6 +14,7 @@ qlstephen
 qlmarkdown
 quicklook-json
 quicklook-csv
+skitch
 slack
 spectacle
 terraform
