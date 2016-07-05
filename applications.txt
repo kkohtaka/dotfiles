@@ -8,7 +8,6 @@ font-noto-sans
 google-cloud-sdk
 google-japanese-ime
 java
-kubernetes-cli
 omnigraffle
 qlcolorcode
 qlstephen
