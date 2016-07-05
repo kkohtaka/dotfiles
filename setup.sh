@@ -80,7 +80,7 @@ done
 
 APPLICATIONS="$(cat applications.txt)"
 for APPLICATION in $APPLICATIONS; do
-    brew cask install "$APPLICATION"
+    brew cask install --caskroom=/opt/homebrew-cask/Caskroom "$APPLICATION"
 done
 
 # Install Go packages
@@ -89,7 +89,7 @@ done
 
 GO_PACKAGES="$(cat go_packages.txt)"
 for GO_PACKAGE in $GO_PACKAGES; do
-    go get "$GO_PACKAGE"
+    go get -u "$GO_PACKAGE"
 done
 
 # Install packages for Atom
@@ -108,4 +108,3 @@ NPM_PACKAGES="$(cat npm_packages.txt)"
 for NPM_PACKAGE in $NPM_PACKAGES; do
     npm install -g "$NPM_PACKAGE"
 done
-
