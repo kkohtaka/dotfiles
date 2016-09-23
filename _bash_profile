@@ -15,5 +15,4 @@ export PATH=$PATH:./node_modules/.bin
 # Go
 
 export GOPATH=$HOME/golang
-export PATH=$PATH:$GOPATH/bin
-
+export PATH=$PATH:$GOPATH/bin:$HOME/bin
