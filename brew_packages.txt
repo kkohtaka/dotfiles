@@ -1,6 +1,7 @@
 brew-cask
 drone
 go
+glide
 jq
 kubernetes-cli
 nvm
