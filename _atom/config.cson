@@ -1,13 +1,16 @@
 "*":
   core:
     disabledPackages: [
-      "linter-jshint"
       "linter-jscs"
+      "linter-jshint"
     ]
     followSymlinks: false
   editor:
+    fontSize: 12
     showInvisibles: true
   "exception-reporting":
     userId: "ed94c887-555e-998f-2cee-8c833ea675fc"
+  "go-config":
+    gopath: "$HOME/golang/"
   welcome:
     showOnStartup: false
