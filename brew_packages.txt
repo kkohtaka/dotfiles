@@ -3,6 +3,7 @@ drone
 go
 glide
 jq
+hg
 kubernetes-cli
 nvm
 plantuml

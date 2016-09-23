@@ -7,7 +7,6 @@ dockertoolbox
 font-noto-sans
 google-cloud-sdk
 google-japanese-ime
-hg
 java
 omnigraffle
 qlcolorcode
