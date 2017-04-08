@@ -1,10 +1,7 @@
 "*":
   core:
-    disabledPackages: [
-      "linter-jscs"
-      "linter-jshint"
-    ]
     followSymlinks: false
+    telemetryConsent: "limited"
   editor:
     fontSize: 12
     showInvisibles: true
