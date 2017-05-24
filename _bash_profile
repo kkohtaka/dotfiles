@@ -7,5 +7,5 @@ source $HOME/.git/contrib/completion/git-completion.bash
 
 # Go
 
-export GOPATH=$HOME/golang
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$HOME/bin
