@@ -1,0 +1,5 @@
+[user]
+	email = kkohtaka@gmail.com
+	name = Kazumasa Kohtaka
+[core]
+	editor = atom --wait
