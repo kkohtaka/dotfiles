@@ -1,6 +1,0 @@
-brew-cask
-go
-jq
-nvm
-rbenv
-plantuml
