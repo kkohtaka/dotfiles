@@ -79,17 +79,6 @@ filetype plugin indent on   " required!
 
 let g:ideone_open_buffer_after_post = 1
 
-""""""""""""
-" NERDTree "
-""""""""""""
-
-autocmd vimenter * NERDTree
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-let g:NERDTreeDirArrows=0
-let g:NERDTreeWinSize=40
-
 """"""""""""""""""""""""""""""""""""""""""
 " vim -b : edit binary using xxd-format! "
 """"""""""""""""""""""""""""""""""""""""""
@@ -116,4 +105,3 @@ autocmd FileType cpp map <buffer> <F3> :call Cpplint()<CR>
 """"""""""""
 
 let g:plantuml_executable_script="~/dotfiles/plantuml"
-
